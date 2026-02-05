@@ -92,6 +92,11 @@ def tag_all(
         all_existing_tags = get_all_existing_tags(products)
         console.print(f"Found [bold]{len(all_existing_tags)}[/bold] existing unique tags\n")
 
+        # Show fixed tags info
+        settings = get_settings()
+        console.print(f"Fixed tags (auto-added): [cyan]{', '.join(settings.fixed_tags)}[/cyan]")
+        console.print(f"AI tags limit: [cyan]{settings.max_ai_tags}[/cyan] per product (fixed tags excluded)\n")
+
         # Initialize tagger with existing tags
         tagger = ClaudeTagger(existing_tags=all_existing_tags)
 

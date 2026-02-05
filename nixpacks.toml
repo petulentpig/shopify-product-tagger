@@ -1,0 +1,5 @@
+[variables]
+PYTHONPATH = "/app"
+
+[start]
+cmd = "python -m src.main tag-all --notify"

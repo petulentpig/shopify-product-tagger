@@ -5,6 +5,7 @@
   },
   "deploy": {
     "startCommand": "python -m src.main tag-all --notify",
-    "restartPolicyType": "NEVER"
+    "restartPolicyType": "NEVER",
+    "cronSchedule": "0 */12 * * *"
   }
 }

@@ -24,8 +24,21 @@ class Settings(BaseSettings):
 
     # Tagging behavior
     max_tags_per_product: int = 13  # Shopify limit is 13 tags
+    max_ai_tags: int = 5  # Max AI-suggested tags (fixed tags don't count)
     dry_run: bool = False  # If True, don't actually update products
     batch_size: int = 50  # Products to process per batch
+
+    # Fixed tags applied to every product (don't count toward AI tag limit)
+    fixed_tags: list[str] = [
+        "boutique bradenton",
+        "boutique ellenton",
+        "boutique lakewood ranch",
+        "bradentons best",
+        "gypsy belle",
+        "boutique",
+        "nashville",
+        "best boutique",
+    ]
 
     # Rate limiting
     shopify_rate_limit: int = 2  # calls per second (Shopify allows 2/sec for Plus, 4/sec otherwise but be conservative)
